@@ -84,12 +84,9 @@ if(NOT _EXIT_CODE EQUAL 0)
   endif()
   include(ExternalProject)
 
-  set(PATCH_COMMAND_STR PATCH_COMMAND
-    git apply ${CMAKE_CURRENT_SOURCE_DIR}/fix_constexpr_assert.patch)
-
   externalproject_add(foo_mem-ext
-  GIT_REPOSITORY https://github.com/foonathan/memory.git
-  GIT_TAG v0.7-4
+  GIT_REPOSITORY https://github.com/eProsima/memory.git
+  GIT_TAG vendor-1.4.1
   TIMEOUT 600
   # Avoid the update (git pull) and so the recompilation of foonathan_memory library each time.
   UPDATE_COMMAND ""
